@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,11 +17,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FirefoxOptions options = new FirefoxOptions();
-        options.setProfile(new FirefoxProfile());
-        options.setBinary("/usr/bin/firefox");
+//        FirefoxOptions options = new FirefoxOptions();
+//        options.setProfile(new FirefoxProfile());
+//        options.setBinary("/usr/bin/firefox");
 
-        WebDriver driver = new FirefoxDriver(options);
+        WebDriver driver = fireforxDriver();
 
         driver.get("http://google.com");
 
@@ -32,5 +33,18 @@ public class Main {
         searchBox.sendKeys("Selenium learning");
         searchBox.sendKeys(Keys.ENTER);
     }
+
+    public static WebDriver fireforxDriver()
+    {
+        WebDriverManager.firefoxdriver().setup();
+        return new FirefoxDriver();
+    }
+
+//    public static WebDriver chromeDriver()
+//    {
+//        ChromeOptions options = new ChromeOptions();
+//
+//
+//    }
 
 }
