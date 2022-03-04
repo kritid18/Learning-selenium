@@ -58,6 +58,12 @@ public class CheckBoxTest {
         assertEquals("Loading complete...", msg.getText());
     }
 
+    @Test
+    public void test_radiobutton()
+    {
+
+    }
+
     @After
     public void close()
     {
